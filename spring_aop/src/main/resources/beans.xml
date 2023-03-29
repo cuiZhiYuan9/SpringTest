@@ -27,18 +27,19 @@
         <!--配置切点需要增强的方法-->
         <aop:pointcut id="A1" expression="execution(* com.cui.impl.Cat.*(..))"/>
         <!--配置织入，目的是要那些切点与那些通知进行结合-->
-        <aop:aspect ref="advice">
-            <!--前置通知-->
+<!--        <aop:aspect ref="advice">
+            &lt;!&ndash;前置通知&ndash;&gt;
             <aop:before method="beforeAdvice" pointcut-ref="A1"></aop:before>
-            <!--后置通知-->
+            &lt;!&ndash;后置通知&ndash;&gt;
             <aop:after-returning method="afterAdvice" pointcut-ref="A1" ></aop:after-returning>
-            <!--环绕通知-->
+            &lt;!&ndash;环绕通知&ndash;&gt;
             <aop:around method="around" pointcut-ref="A1"></aop:around>
-            <!--异常通知-->
+            &lt;!&ndash;异常通知&ndash;&gt;
             <aop:after-throwing method="AfterT" pointcut-ref="A1" throwing="th"/>
-            <!--最终通知，无论有异常否都会进行通知-->
+            &lt;!&ndash;最终通知，无论有异常否都会进行通知&ndash;&gt;
             <aop:after method="After" pointcut-ref="A1"/>
-        </aop:aspect>
+        </aop:aspect>-->
+        <aop:advisor advice-ref="" pointcut-ref="A1"/>
     </aop:config>
 
 

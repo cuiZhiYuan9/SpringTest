@@ -1,0 +1,17 @@
+package testrule;
+dialect  "mvel"
+import com.cui.Pojo.RuleTest
+import com.cui.util.*
+
+rule "Frist"
+    when
+      rls:RuleTest(RuleUtil.chooseretrun(falg,rls))
+    then
+    String falg = rls.getFalg();
+    if(falg.equals("1")){System.out.println("flag = 1");}
+
+    if(falg.equals("2")){System.out.println("flag = 2");}
+     if(falg.equals("3")){System.out.println("flag = 3");}
+end
+
+

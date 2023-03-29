@@ -1,4 +1,5 @@
 import com.cui.Processor.BeanPostProcessorTest;
+import com.cui.Service.DemoService;
 import com.cui.api.Advice;
 import com.cui.api.Animal;
 import com.cui.entity.User;
@@ -21,11 +22,18 @@ public class test {
     }
 
     @Test
-    public void test01(){
+    public void test01() {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         Cat bean = context.getBean(Cat.class);
-    bean.cal();
+        bean.cal();
         bean.name();
+    }
+
+    @Test
+    public void test03() {
+        String orgno = "123456912345678";
+        String idno = "123456789123456789";
+        DemoService.ComPareID(orgno, idno);
     }
 
 }
